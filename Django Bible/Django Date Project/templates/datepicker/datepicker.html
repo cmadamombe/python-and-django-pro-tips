@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+Date Example
+{% endblock title %}
+
+{% block content %}
+<form method="post" action="" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button> Submit </button>
+</form>
+
+<script type="text/javascript">
+    $(function() {
+        $('#id_dob').datepicker( {
+            changeMonth: true,
+            changeYear: true,
+            showButtonPanel: true,
+            yearRange: "2022:2099",
+            dateFormat: 'mm/dd/yy'
+        });
+    });
+</script>
+{% endblock %}
+
